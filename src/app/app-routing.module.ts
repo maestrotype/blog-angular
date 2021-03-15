@@ -3,6 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
+import { AdminModule } from './admin/admin.module';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
      {path: 'post/:id', component: PostPageComponent} 
     ]
   },{
-    path: 'admin', loadChildren: './admin/admin.module#AdminModule'
+    path: 'admin', loadChildren: () => AdminModule
   }
 ];
 
